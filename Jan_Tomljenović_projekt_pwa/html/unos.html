@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unos Vijesti | Sopitas.com (Klon)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..\css\stil.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <p class="logo">
+            <img src="..\img/logo.png" alt="Sopitas.com Logo">
+        </p>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="..\index.php">HOME</a></li>
+                <li><a href="..\kategorija.php?id=glazba">MÚSICA</a></li>
+                <li><a href="..\kategorija.php?id=sport">DEPORTES</a></li>
+                <li><a href="unos.html">PRIJAVA/ADMIN</a></li>
+                <li><a href="..\registracija.php">REGISTRACIJA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="category-section">
+            <h2 class="section-title">UNOS NOVE VIJESTI</h2>
+
+            <form name="unosVijestiForma" action="..\skripta.php" method="POST" enctype="multipart/form-data" class="input-form">
+                <fieldset>
+                    <legend>Informacije o vijesti</legend>
+
+                    <p class="form-item">
+                        <label for="title">Naslov vijesti</label>
+                        <input type="text" name="title" id="title" class="form-field-textual" required>
+                    </p>
+
+                    <p class="form-item">
+                        <label for="about">Kratki sadržaj vijesti (do 50 znakova)</label>
+                        <textarea name="about" id="about" cols="30" rows="5" class="form-field-textual" maxlength="100" required></textarea>
+                    </p>
+
+                    <p class="form-item">
+                        <label for="content">Sadržaj vijesti</label>
+                        <textarea name="content" id="content" cols="30" rows="10" class="form-field-textual" required></textarea>
+                    </p>
+
+                    <p class="form-item">
+                        <label for="pphoto">Slika: </label>
+                        <input type="file" name="pphoto" id="pphoto" accept="image/jpg, image/png, image/jpeg, image/gif" class="input-text" required>
+                    </p>
+
+                    <p class="form-item">
+                        <label for="category">Kategorija vijesti</label>
+                        <select name="category" id="category" class="form-field-textual" required>
+                            <option value="sport">Sport</option>
+                            <option value="glazba">Glazba</option>
+                            <option value="ostalo">Ostalo</option>
+                        </select>
+                    </p>
+
+                    <p class="form-item">
+                        <label for="archive">Spremiti u arhivu:
+                            <input type="checkbox" name="archive" id="archive">
+                        </label>
+                    </p>
+                </fieldset>
+
+                <p class="form-item form-buttons">
+                    <button type="reset" value="Poništi">Poništi</button>
+                    <button type="submit" value="Prihvati">Prihvati</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy;Jan Tomljenović - 0246118040 </p>
+    </footer>
+
+</body>
+</html>
